@@ -2,7 +2,7 @@ const payButton = document.getElementById('payButton');
 const statusBox = document.getElementById('status');
 
 // Example UPI deep link
-const upiLink = `upi://pay?pa=9391334124@ybl&pn=Lakshmisnehitha&am=1.00&cu=INR`;
+const upiLink = `upi://pay?pa=gudurulakhmisnehitha123@okicici&pn=Lakshmisnehitha&am=1.00&cu=INR`;
 
 payButton.addEventListener('click', () => {
   statusBox.textContent = "Redirecting to UPI app...";

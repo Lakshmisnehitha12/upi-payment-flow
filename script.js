@@ -1,21 +1,27 @@
 const payButton = document.getElementById('payButton');
 const statusBox = document.getElementById('status');
 
-// Example UPI deep link
-const upiLink = `upi://pay?pa=gudurulakhmisnehitha123@okicici&pn=Lakshmisnehitha&am=1.00&cu=INR`;
+new QRCode(document.getElementById("qrcode"), {
+    text: `upi://pay?pa=${upiId}&pn=ReceiverName&cu=INR`,
+    width: 200,
+    height: 200
+});
+
+//startActivityForResult(intent, UPI_PAYMENT_REQUEST_CODE);
 
 payButton.addEventListener('click', () => {
-  statusBox.textContent = "Redirecting to UPI app...";
-  statusBox.className = "status-box";
-  
+    statusBox.textContent = "Please scan the QR code or use the UPI ID to pay.";
+    statusBox.className = "status-box";
+});
+
   // Open UPI app
-  window.location.href = upiLink;
+  //window.location.href = upiLink;
 
   // Simulate waiting for user to come back
   setTimeout(() => {
     showConfirmButton();
   }, 5000);
-});
+
 
 function showConfirmButton() {
   statusBox.innerHTML = `
